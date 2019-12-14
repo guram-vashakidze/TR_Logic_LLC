@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^images/avatar$ avatar.php [L,QSA]

@@ -1,0 +1,156 @@
+@import "preloader.css";
+@import "tooltips.css";
+
+.block-window {
+    position: fixed;
+    background-color: black;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    opacity: 0.12;
+    z-index: -10;
+}
+
+.loading {
+    color: rgba(0, 0, 0, 0.87);
+    padding: 3px 6px 3px 6px;
+    font-weight: 700;
+    font-size: 13px;
+    left: 48%;
+    background-color: #fff1a8;
+    -webkit-box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.247), 0 3px 5px rgba(0, 0, 0, 0.247);
+    box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.247), 0 3px 5px rgba(0, 0, 0, 0.247);
+    -webkit-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    z-index: 10000;
+    top: 0;
+    position: fixed;
+    display: none;
+}
+
+header {
+    background-color: #448AFF;
+    color: white;
+    padding: 15px 0 15px 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+header .logout {
+    font-size: 18px;
+    font-weight: bold;
+    float: right;
+    display: inline;
+    position: relative;
+    margin: -40px 40px 0 0;
+    cursor: pointer;
+}
+
+div.content-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 15px 15px 15px;
+}
+
+div.content-body > form {
+    width: 50%;
+}
+div.content-body > div {
+    width: 50%;
+}
+div.content-body > div form {
+    width: 100%;
+}
+
+.btn-link {
+    cursor: pointer;
+}
+
+.show-alert  {
+    position: fixed;
+    left: 20px;
+    display: block;
+    bottom: -100px;
+    transition: all 0.4s;
+    z-index: 2147483647;
+    max-width: 350px;
+    min-width: 288px;
+    width: 568px;
+    margin: 10px 0 10px 0;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+}
+
+.avatar {
+    width: 250px;
+    height: 250px;
+    border-radius: 125px;
+    box-shadow:  0 0 5px rgba(0, 0, 0, 0.247);
+}
+
+.avatar-block {
+    width: 250px;
+    height: 250px;
+    border-radius: 125px;
+    background-color: black;
+    opacity: 0.44;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    visibility: hidden;
+    top: 0;
+    z-index: 10;
+}
+.avatar-buttons {
+    display: inline-block;
+    float: right;
+    margin-top: -23px;
+}
+
+.avatar-buttons i {
+    display: none;
+    color: rgba(0,0,0,0.34);
+}
+
+.avatar-buttons .delete-avatar:hover {
+    color: red;
+}
+
+.avatar-buttons .redo-avatar:hover, .avatar-buttons .undo-avatar:hover{
+    color: green;
+}
+
+
+footer {
+    width: 100%;
+    text-align: right;
+    background-color: aliceblue;
+    bottom: 0;
+    position: fixed;
+    padding: 2px 10px;
+}
+.language {
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+.language[data-active="active"] {
+    background-color: #2585e8;
+    color: white;
+    box-shadow:  0 0 3px rgba(0, 0, 0, 0.247);
+    cursor: default;
+}
+
+.language[data-active="none"]:hover {
+    background-color: #b9e2ff;
+    box-shadow:  0 0 3px rgba(0, 0, 0, 0.247);
+    cursor: pointer;
+}

@@ -19,11 +19,11 @@ trait MySQL {
         $connect = \App\Config::MYSQL;
         //Пытаемся подключится
         try {
-            self::$MySQL = mysqli_connect($connect['host'], $connect['user'], $connect['pass'], $connect['db'], $connect['port']);
+            self::$MySQL = mysqli_connect($connect['host'], $connect['user'], $connect['password'], $connect['db'], $connect['port']);
         } catch (\Exception $e) {
             //Неудачное подключение
             return self::returnErrorMySQL(
-                'Неудалось подключиться к MySQL: ' . $connect['node'] . "\n" .$e->getMessage()
+                'Неудалось подключиться к MySQL' . "\n" .$e->getMessage()
             );
         }
         //Неудачное подключение
@@ -32,6 +32,7 @@ trait MySQL {
         );
         //Выставляем кодировку
         if (mysqli_query(self::$MySQL, "SET NAMES utf8") === false) return self::returnErrorMySQL('Failed UTF-8: '. mysqli_error(self::$MySQL));
+        if (mysqli_query(self::$MySQL, "SET time_zone = '".\App\Config::TIMEZONE['mysql']."'") === false) return self::returnErrorMySQL('Failed TIME_ZONE: '. mysqli_error(self::$MySQL));
         return self::$MySQL;
     }
 
@@ -104,12 +105,15 @@ trait MySQL {
             $j++;
         }
         $message = "\n".implode("\n", $message);
-        return [
+        $result = [
             'error' => [
                 'message' => $msg.$message,
                 'query' => $query
             ]
         ];
+        //Если включен режим разработчика
+        if (\App\Config::DEV) \App\Helper::debug($result);
+        return $result;
     }
 
     private static $MySQLTypes = [
