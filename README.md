@@ -1,4 +1,7 @@
 ## Тестовое задание. TR Logic LLC
+
+[Описание задания](https://docs.google.com/document/d/1IyIZtRQmyzW7DDlibUnTWumpZtPIzwYcZUXKNF_QGUE/edit?usp=sharing)
+
 #### Условия запуска
 > PHP5.6  
 > Apache Module [mod_rewrite](https://httpd.apache.org/docs/current/mod/mod_rewrite.html)  
@@ -91,3 +94,5 @@ UserAuth содержит все «авторизации» пользовате
 Имеет аналогичный функционал "Регистрации" с возможностью изменения пароля 
 и удаления аватарки (если такова установлена). Вывод аватарки реализован средствам PHP для защиты изображений
 других пользователей.
+
+[Видео с демонстрацией реализованного функционала](https://drive.google.com/file/d/10oA4MRsGP7bC3WH74BVwI-73iwXEcu_c/view?usp=sharing)

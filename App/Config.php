@@ -3,13 +3,13 @@ namespace App;
 
 class Config {
 
-    const HOST = '....';
+    const HOST = 'logic.loc';
 
     /**Данные подключения к MySQL*/
     const MYSQL = [
         'host' => 'localhost',
-        'user' => '',
-        'password' => '',
+        'user' => 'root',
+        'password' => '1111',
         'db' => 'tr_logic',
         'port' => '8123'
     ];
@@ -17,13 +17,13 @@ class Config {
     /**Константа для указания всех доступных путей в приложении*/
     const PATH = [
         //Полный путь к файлам проекта
-        'include' => '....',
+        'include' => '/var/www/logic.loc',
         //путь к аватаркам
-        'avatar' => '..../images/',
+        'avatar' => '/var/www/logic.loc/images/',
         //путь к аватарке по умолчанию
-        'default_avatar' => '..../images/avatar.png',
+        'default_avatar' => '/var/www/logic.loc/images/avatar.png',
         //Путь к шаблонам e-mail сообщений
-        'mail' => '..../tpl/mail/'
+        'mail' => '/var/www/logic.loc/tpl/mail/'
     ];
 
     /**Данные для отправки писем пользователям*/
